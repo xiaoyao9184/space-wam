@@ -1,4 +1,9 @@
-
+import os
+import sys
+if "APP_PATH" in os.environ:
+    os.chdir(os.environ["APP_PATH"])
+    # fix sys.path for import
+    sys.path.append(os.getcwd())
 
 import gradio as gr
 
